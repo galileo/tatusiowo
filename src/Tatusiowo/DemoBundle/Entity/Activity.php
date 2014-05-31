@@ -112,13 +112,28 @@ class Activity
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Item", inversedBy="items")
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Item", inversedBy="activities")
      * @ORM\JoinTable(name="activities_items",
      *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="item_id", referencedColumnName="id")}
      * )
      */
     protected $items;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Tatusiowo\DemoBundle\Entity\ActivitiesDone", mappedBy="activity")
+     */
+    protected $userDoneActivities;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\User", inversedBy="activitiesToDo")
+     * @ORM\JoinTable(name="activities_to_do",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="item_id", referencedColumnName="id")}
+     * )
+     */
+    protected $userToDoActivities;
 
     /**
      * @var \DateTime

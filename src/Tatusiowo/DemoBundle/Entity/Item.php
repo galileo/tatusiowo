@@ -39,7 +39,7 @@ class Item
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="activities")
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="items")
      */
     protected $activities;
 

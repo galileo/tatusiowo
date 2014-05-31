@@ -61,6 +61,17 @@ class User
      */
     protected $userPoints;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Tatusiowo\DemoBundle\Entity\ActivitiesDone", mappedBy="user")
+     */
+    protected $activitiesDone;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="userToDoActivities")
+     */
+    protected $activitiesToDo;
+
     function __construct()
     {
         $this->children = new ArrayCollection();
