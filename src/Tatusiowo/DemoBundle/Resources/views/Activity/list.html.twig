@@ -7,7 +7,7 @@
     <div class="grid grid--full">
         {% for activity in activities %}<!--
         --><article class="grid__item tablet-portrait--one-half desktop--one-third wide-desktop--one-third">
-            <a href="#" class="list-item">
+            <a href="{{ path('tatusiowo_activity_detail', {'activityId': activity.id}) }}" class="list-item">
                 <img src="/images/photo-1.jpg" alt="{{ activity.image.title }}">
                 <div class="desc">
                     <div class="desc-content">
@@ -28,7 +28,7 @@
                                 </ul>
                             </div><!--
                             --><div class="grid__item one-quarter">
-                                <span class="ico ico-like">1244</span>
+                                <span class="ico ico-like">{{ activity.like }}</span>
                             </div>
                         </div>
                     </div>

@@ -475,4 +475,11 @@ class Activity
         return $this;
     }
 
+    /**
+     * @return int
+     */
+    public function getLike()
+    {
+        return rand(231, 23143);
+    }
 }
