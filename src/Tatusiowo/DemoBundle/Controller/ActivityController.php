@@ -16,6 +16,9 @@ class ActivityController extends Controller
      */
     public function listAction()
     {
-        return [];
+        $activities = $this->getDoctrine()->getRepository('DemoBundle:Activity')->findAll();
+//        $this->manager->assignLikes($activities);
+
+        return array('activities' => $activities);
     }
 }

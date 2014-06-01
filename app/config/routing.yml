@@ -1,3 +1,8 @@
+demo_main_activity:
+    resource: "@DemoBundle/Controller/MainController.php"
+    type:     annotation
+    prefix:   /
+
 demo_activity:
     resource: "@DemoBundle/Controller/ActivityController.php"
     type:     annotation
@@ -12,11 +17,3 @@ demo_admin_activity:
     resource: "@DemoBundle/Controller/Admin/ActivityController.php"
     type:     annotation
     prefix:   /admin/activity
-
-hwi_oauth_redirect:
-    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-    prefix:   /connect
-
-hwi_oauth_login:
-    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix:   /login

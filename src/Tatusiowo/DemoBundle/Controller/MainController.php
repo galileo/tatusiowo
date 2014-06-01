@@ -6,26 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class UserController extends Controller
+class MainController extends Controller
 {
     /**
-     * @Route("/data", name="tatusiowo_user_data")
+     * @Route("/homepage", name="homepage")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      * @Template()
      */
-    public function dataAction()
+    public function homepageAction()
     {
-        return [];
-    }
-
-    /**
-     * @Route("/login", name="tatusiowo_user_login")
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @Template()
-     */
-    public function loginAction(){
         return [];
     }
 }

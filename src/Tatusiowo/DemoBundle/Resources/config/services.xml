@@ -1,20 +1,54 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="demo.example.class">Tatusiowo\DemoBundle\Example</parameter>
+        <parameter key="tatusiowo_activity_manager.class">Tatusiowo\DemoBundle\Service\ActivityManager</parameter>
     </parameters>
-
     <services>
-        <service id="demo.example" class="%demo.example.class%">
-            <argument type="service" id="service_id" />
+        <service id="tatusiowo_activity_repository" class="%tatusiowo_activity_repository.class%">
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
         </service>
+
+        <!-- Activity repository -->
+        <service id="tatusiowo_activity_repository"
+                 class="Doctrine\ORM\EntityRepository"
+                 factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository"
+                >
+
+            <argument>DemoBundle:Activity</argument>
+        </service>
+
+        <!-- User repository -->
+        <service id="tatusiowo_user_repository"
+                 class="Doctrine\ORM\EntityRepository"
+                 factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository"
+                >
+
+            <argument>DemoBundle:User</argument>
+        </service>
+
+        <!-- ActivityDone repository -->
+        <service id="tatusiowo_activity_done_repository"
+                 class="Doctrine\ORM\EntityRepository"
+                 factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository">
+
+            <argument>DemoBundle:ActivityDone</argument>
+        </service>
+
+        <!-- Activity manager -->
+        <service id="tatusiowo_activity_manager"
+                 class="%tatusiowo_activity_manager.class%"
+                >
+
+            <argument type="service" id="tatusiowo_activity_repository"/>
+        </service>
+
     </services>
-    -->
 </container>

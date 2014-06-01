@@ -1,1 +1,41 @@
-Hello!
+{% extends('@Demo/layout-with-header.html.twig') %}
+
+{% block pageTitle %}Lista zabaw{% endblock %}
+
+{% block content %}
+<section class="activities-list wrapper">
+    <div class="grid grid--full">
+        {% for activity in activities %}<!--
+        --><article class="grid__item tablet-portrait--one-half desktop--one-third wide-desktop--one-third">
+            <a href="#" class="list-item">
+                <img src="/images/photo-1.jpg" alt="{{ activity.image.title }}">
+                <div class="desc">
+                    <div class="desc-content">
+                        <h2 class="heading">{{ activity.title }}</h2>
+                        <div class="grid">
+                            <div class="grid__item three-quarters">
+                                <ul class="icons">
+                                    <li class="ico ico-time">
+                                        {%  if activity.timeFrom == activity.timeTo %}
+                                            {{ activity.timeFrom }}
+                                        {% else %}
+                                            {{ activity.timeFrom }} - {{ activity.timeTo }}
+                                        {% endif %}
+                                        min</li>
+                                    <li class="ico ico-fun">{{ activity.fun }}/5</li>
+                                    <li class="ico ico-creative">{{ activity.creativity }}/5</li>
+                                    <li class="ico ico-sport">{{ activity.effort }}/5</li>
+                                </ul>
+                            </div><!--
+                            --><div class="grid__item one-quarter">
+                                <span class="ico ico-like">1244</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </article><!--
+        -->{% endfor %}
+    </div>
+</section>
+{% endblock %}

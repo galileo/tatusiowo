@@ -1,0 +1,24 @@
+{% extends "DemoBundle::layout.html.twig" %}
+
+{% block bodyCss %} login-body {% endblock %}
+
+{% block content %}
+<section class="login-form">
+    <div class="picture">
+    </div>
+    <div class="login-buttons">
+        <a href="#" class="facebook">
+            <span class="ico"></span>
+            Zaloguj się przez Facebook
+        </a>
+        <a href="#" class="google-plus">
+            <span class="ico"></span>
+            Zaloguj się przez Google
+        </a>
+    </div>
+    <aside class="partner">
+        <p>Partner</p>
+        <img src="/images/open-card.png" alt="Open card">
+    </aside>
+</section>
+{% endblock %}

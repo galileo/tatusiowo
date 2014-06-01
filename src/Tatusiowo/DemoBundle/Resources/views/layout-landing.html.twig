@@ -1,0 +1,25 @@
+{% block header %}
+<header class="header wrapper">
+    <div class="grid">
+        <div class="grid__item one-fifth">
+            <a class="menu-button jsNav" href="#sidr">
+                <span class="trigger"></span>
+            </a>
+
+            <div id="sidr">
+                <ul>
+                    <li><a href="#">List 1</a></li>
+                    <li class="active"><a href="#">List 2</a></li>
+                    <li><a href="#">List 3</a></li>
+                </ul>
+            </div>
+        </div><!--
+        --><div class="grid__item three-fifths">
+            <h1 class="main-header">{% block pageTitle %}Daddy Do It{% endblock %}</h1>
+        </div><!--
+        --><div class="grid__item one-fifth">
+            logo
+        </div>
+    </div>
+</header>
+{% endblock %}

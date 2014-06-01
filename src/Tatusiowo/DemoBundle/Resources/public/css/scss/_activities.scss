@@ -1,0 +1,71 @@
+.activities-list {
+	.list-item {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.desc {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		padding: 0 20px;
+		background: url(/images/bcg-list-overlay.png) 0 bottom repeat-x;
+		@include box-sizing(border);
+		.desc-content {
+			width: 100%;
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+
+	.icons {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.ico {
+		display: inline-block;
+		margin-right: 10px;
+		font-size: 13px;
+		color: $white;
+		background-size: 16px auto;
+		background-position: left 0;
+		background-repeat: no-repeat;
+		padding-left: 20px;
+		padding-bottom: 4px;
+	}
+	.ico-time {
+		background-image: url(/images/icons/ico-clock.png);
+	}
+	.ico-fun {
+		background-image: url(/images/icons/ico-fun.png);
+	}
+	.ico-creative {
+		background-image: url(/images/icons/ico-brush.png);
+	}
+	.ico-sport {
+		background-image: url(/images/icons/ico-sport.png);
+	}
+	.ico-like {
+		background-image: url(/images/icons/ico-like.png);	
+	}
+
+
+	.heading {
+		font-size: 20px;
+		font-weight: 300;
+		color: $white;
+		@include transition(300ms);
+		@include min-screen($tablet-portrait) {
+			font-size: 24px;
+		}
+		@include min-screen($tablet-landscape) {
+			font-size: 30px;
+		}
+		@include min-screen($desktop) {
+			font-size: 34px;
+		}
+	}
+}

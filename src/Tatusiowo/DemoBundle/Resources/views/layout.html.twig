@@ -1,21 +1,43 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		{% block content %}
-		{% endblock %}
+    {% block stylesheets %}
+        {% stylesheets
+        '@DemoBundle/Resources/public/css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock stylesheets %}
+    <script type="text/javascript" src="//use.typekit.net/xel3txy.js"></script>
+    <script type="text/javascript">try {
+            Typekit.load();
+        } catch (e) {
+        }</script>
+</head>
+<body class="{% block bodyCss %}{% endblock %}">
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+{% block header %}
+{% endblock %}
 
-		{% block javascripts %}
-	    {% endblock %}
-    </body>
+{% block content %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+    '@DemoBundle/Resources/public/js/vendor/modernizr-2.8.0.min.js'
+    '@DemoBundle/Resources/public/js/vendor/jquery-1.11.1.min.js'
+    '@DemoBundle/Resources/public/js/vendor/jquery.sidr.min.js'
+    '@DemoBundle/Resources/public/js/main.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
 </html>
